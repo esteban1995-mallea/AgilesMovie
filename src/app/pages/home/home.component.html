@@ -1,29 +1,29 @@
-<p>
-    <mat-toolbar>
+<div style="align-content: center;">
+  <p>
+    <mat-toolbar style="background-color: blueviolet;">
 
-    
-    <span class="example-spacer"></span>
-    <span>AgilesMovies</span>
-  </mat-toolbar>
+
+      <span class="example-spacer"></span>
+      <span style="color:white">{{informacionUsuario}}</span>
+    </mat-toolbar>
   </p>
 
-  <p>
 
-    <h1>Peliculas en estreno</h1>
-    <br>
-
-
-
-
-    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  <h1 style="margin-left: 60px;">Peliculas en estreno</h1>
+  <br>
+  <div style="width: 90%;	margin-left: 100px;margin-right: auto;">
+    <div id="carouselExampleControls" style="width: 90%; align-items:center"  class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img  class="d-block w-100" alt="...">
+          <img class="d-block w-100" alt="Primera Pelicula">
         </div>
         <div *ngFor="let peliculasEstreno of PeliculasEstreno;index as i" class="carousel-item">
           <img src={{UrlEstreno+peliculasEstreno.backdrop_path}} class="d-block w-100" alt="...">
+          <div class="text-center">
+            <h4 class="card-title">{{peliculasEstreno.title}}</h4>
+          </div>
         </div>
-    
+  
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -34,24 +34,11 @@
         <span class="visually-hidden">Next</span>
       </button>
     </div>
+  </div>
 
+  <hr>
 
+  <h1 style="margin-left: 60px;">Peliculas Mas Populares</h1>
+  <br>
 
-
-
-
-
-
-
-
-
-
-<div *ngFor="let peliculasEstreno of PeliculasEstreno;index as i"  class="carousel-item">
-  <div class="row">
-    <div class="col-sm-3">
-      <img class="d-block img-fluid" src={{UrlEstreno+peliculasEstreno.backdrop_path}} alt="First slide">
-      <div class="text-center">
-        <h6 class="card-title">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h6>
-      </div>
-    </div>
-      
+</div>

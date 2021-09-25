@@ -16,16 +16,12 @@ export class HomeComponent implements OnInit {
   PeliculasPopulares:any;
   UrlEstreno:string="";
 
-  arrNumber:number[]=[];
+
   pageEstreno:number=1;
   pagePopulares:number=1;
 
-
+  //variable para cambiar clase de carrusel
   IsActive:boolean=true;
-
-
-
- 
 
   constructor(private peliculas_service:PeliculasService,private usuarios_serices:UsuariosService) {
 
@@ -37,12 +33,16 @@ export class HomeComponent implements OnInit {
     
     this.peliculas_service.peliculasEstreno(this.pageEstreno).subscribe(res=>{
       this.UrlEstreno=res.imageBaseUrl;
-      console.log(this.UrlEstreno)
       this.PeliculasEstreno=res.data
+      console.log(this.PeliculasEstreno);
     });
   // this.PeliculasPopulares=this.peliculas_service.peliculasPopulares(this.pagePopulares).subscribe(res=>console.log(res));
-   // console.log("user")
-   // this.usuarios_serices.infomacionUsuario().subscribe(res=>console.log(res));
+    this.usuarios_serices.infomacionUsuario().subscribe(res=>{
+      this.informacionUsuario="Hola "+res.data.firstName+" "+res.data.lastName
+      console.log(this.informacionUsuario);
+    });
+    
+    //this.informacionUsuario=info.firstName;
   }
 
 }
