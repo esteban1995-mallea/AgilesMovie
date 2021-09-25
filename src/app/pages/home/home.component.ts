@@ -11,11 +11,17 @@ import { UsuariosService } from 'src/app/services/usuarios.service';
 })
 export class HomeComponent implements OnInit {
 
-  informacionUsuario:Object={};
-  PeliculasEstreno:Object={};
-  PeliculasPopulares:Object={};
+  informacionUsuario:any;
+  PeliculasEstreno:any;
+  PeliculasPopulares:any;
+  UrlEstreno:string="";
 
   arrNumber:number[]=[];
+  pageEstreno:number=1;
+  pagePopulares:number=1;
+
+
+  IsActive:boolean=true;
 
 
 
@@ -23,27 +29,20 @@ export class HomeComponent implements OnInit {
 
   constructor(private peliculas_service:PeliculasService,private usuarios_serices:UsuariosService) {
 
-    for(let i=0;i<10000;i++){
-      this.arrNumber.push(i);
-    }
    }
 
   ngOnInit(): void {
 
-    for(let i=0;i<10000;i++){
-      this.arrNumber.push(i);
-    }
+
     
-    console.log("estreno")
-    this.peliculas_service.peliculasEstreno().subscribe(res=>console.log(res));
-    console.log("popu")
-    this.peliculas_service.peliculasPopulares().subscribe(res=>console.log(res));
-    console.log("user")
-    this.usuarios_serices.infomacionUsuario().subscribe(res=>console.log(res));
+    this.peliculas_service.peliculasEstreno(this.pageEstreno).subscribe(res=>{
+      this.UrlEstreno=res.imageBaseUrl;
+      console.log(this.UrlEstreno)
+      this.PeliculasEstreno=res.data
+    });
+  // this.PeliculasPopulares=this.peliculas_service.peliculasPopulares(this.pagePopulares).subscribe(res=>console.log(res));
+   // console.log("user")
+   // this.usuarios_serices.infomacionUsuario().subscribe(res=>console.log(res));
   }
-
-
-
-
 
 }

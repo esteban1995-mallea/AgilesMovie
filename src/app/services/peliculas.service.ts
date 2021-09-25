@@ -19,10 +19,10 @@ export class PeliculasService {
   constructor(private http:HttpClient,private router: Router) { 
   }
 
-  peliculasEstreno(): Observable<any> {
+  peliculasEstreno(page:number): Observable<any> {
 
     const params = new HttpParams()
-    .set('page', 20)
+    .set('page', page)
     return this.http
     .get<any>(`${environment.API}/movies/now_playing`,{params})
     .pipe(
@@ -33,10 +33,10 @@ export class PeliculasService {
     );
   }
 
-  peliculasPopulares(): Observable<any> {
+  peliculasPopulares(page:number): Observable<any> {
 
     const params = new HttpParams()
-    .set('page', 50)
+    .set('page', page)
     return this.http
     .get<any>(`${environment.API}/movies/popular`,{params})
     .pipe(
