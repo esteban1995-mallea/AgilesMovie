@@ -9,49 +9,109 @@
 
   <p>
 
-
-
-    <div class="container">
-      <div class="row">
-        <h2>Peliculas</h2>
-      </div>
-    </div>
-    <!-- .container -->
+    <h1>Peliculas en estreno</h1>
     <br>
-    <div class="container">
+
+
+
+<div class="container">
+	<div class="row">
+		<h2>Carrousel Bootstrap 4 with Thumbnails</h2>
+	</div>
+</div>
+<!-- .container -->
+<br>
+<div class="container">
+
+	<div class="col-sm-12">
+		<h3>RELATED POSTS</h3>
+	</div>
+	<hr>	
+	<div class="col-sm-12">
+		<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+<div class="carousel-inner" role="listbox">
+	<div class="carousel-item active">
+		<div class="row">
+			<div class="col-sm-3">
+				<img class="d-block img-fluid" src="http://placehold.it/400x400" alt="First slide">
+				<div class="text-center">
+					<h6 class="card-title">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h6>
+				</div>
+			</div>
+  			
+  			<div class="col-sm-3">
+  				<img class="d-block img-fluid" src="http://placehold.it/400x400" alt="First slide">
+  				<div class="text-center">
+  					<h6 class="card-title">Lorem ipsum dolor sit amet.</h6>
+  				</div>
+  			</div>
+  			<div class="col-sm-3">
+  				<img class="d-block img-fluid" src="http://placehold.it/400x400" alt="First slide">
+  				<div class="text-center">
+  					<h6 class="card-title">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h6>
+  				</div>
+  			</div>
+  			<div class="col-sm-3">
+  				<img class="d-block img-fluid" src="http://placehold.it/400x400" alt="First slide">
+  				<div class="text-center">
+  					<h6 class="card-title">Lorem ipsum dolor sit amet.</h6>
+  				</div>
+  			</div>
+  		</div>
+  	</div>
+
     
-      <div class="col-sm-12">
-        <h3>RELATED POSTS</h3>
-      </div>
-      <hr>	
-      <div class="col-sm-12">
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner" role="listbox">
-      <div *ngFor="let peliculasEstreno of PeliculasEstreno;index as i"  class="carousel-item active">
-        <div class="row">
-          <div class="col-sm-3">
-            <img class="d-block img-fluid" src={{UrlEstreno+peliculasEstreno.backdrop_path}} alt="First slide">
-            <div class="text-center">
-              <h6 class="card-title">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h6>
-            </div>
-          </div>
-            
-     
+  	<div class="carousel-item">
+  		<div class="row">
+  			<div class="col-sm-3">
+  				<img class="d-block img-fluid" src="http://placehold.it/400x400" alt="First slide">
+				<div class="text-center">					
+  					<h6 class="card-title">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h6>
+				</div>
+  			</div>
+  			<div class="col-sm-3">
+  				<img class="d-block img-fluid" src="http://placehold.it/400x400" alt="First slide">
+
+  			</div>
+  			<div class="col-sm-3">
+  				<img class="d-block img-fluid" src="http://placehold.it/400x400" alt="First slide">
+  			</div>
+  			<div class="col-sm-3">
+  				<img class="d-block img-fluid" src="http://placehold.it/400x400" alt="First slide">
+  			</div>
+  		</div>
+  	</div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+  	<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+  	<span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+  	<span class="carousel-control-next-icon" aria-hidden="true"></span>
+  	<span class="sr-only">Next</span>
+  </a>
+</div>
+</div>
+</div>
+<hr>
 
 
-        </div>
+
+
+
+
+
+
+
+
+
+
+<div *ngFor="let peliculasEstreno of PeliculasEstreno;index as i"  class="carousel-item active">
+  <div class="row">
+    <div class="col-sm-3">
+      <img class="d-block img-fluid" src={{UrlEstreno+peliculasEstreno.backdrop_path}} alt="First slide">
+      <div class="text-center">
+        <h6 class="card-title">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h6>
       </div>
-  
-      </div>
-      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
     </div>
-    </div>
-    </div>
-    <hr>
+      
